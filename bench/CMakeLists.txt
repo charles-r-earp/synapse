@@ -1,0 +1,6 @@
+add_custom_target(synapse_bench ALL DEPENDS synapse)
+foreach(bench bench_matrix)
+  add_executable("${bench}" "${bench}.cpp")
+  target_link_libraries("${bench}" synapse)
+  add_custom_command(TARGET synapse_bench POST_BUILD COMMAND "./${bench}")
+endforeach(bench)

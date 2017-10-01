@@ -1,0 +1,7 @@
+add_custom_target(synapse_tests ALL)
+foreach(test test_matrix test_adiff test_net)
+  add_executable("${test}" "${test}.cpp")
+  target_link_libraries("${test}" synapse)
+  add_dependencies(synapse_tests "${test}")
+  add_custom_command(TARGET synapse_tests POST_BUILD COMMAND "./${test}")
+endforeach(test)
