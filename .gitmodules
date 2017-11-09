@@ -1,0 +1,7 @@
+[submodule "submodules/thrust"]
+	path = submodules/thrust
+	url = https://github.com/thrust/thrust
+[submodule "submodules/xassert"]
+	path = submodules/xassert
+	url = https://github.com/rg3/xassert
+	branch = master
